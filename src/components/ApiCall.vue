@@ -5,10 +5,12 @@
      v-if="products.length" class="grid grid-cols-1 sm:grid-cols-5 lg:grid-cols-4 gap-8 mt-20">
       <div v-for="product in products" :key="product.id"
        class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+       {{console.log(`Image for image id ${product.id} is ${product.images[0]}`)}}
         <a href="#">
           <img
-            class="p-8 rounded-t-lg" 
-            :src="product.image" 
+            class="p-8 rounded-t-lg"
+            :data-id="product.id" 
+            :src=getImage(product.images[0]) 
             :alt="product.title" />
         </a>
         <div class="px-5 pb-5">
@@ -47,6 +49,7 @@
 </template>
 
 <script setup>
+import DefaultImage from '../../../E-Commerce/src/assets/Hoodie.jpg';
 import { ref, onMounted } from 'vue';
 
 const products = ref([]);
@@ -63,6 +66,17 @@ const fetchProducts = async () => {
 };
 
 onMounted(fetchProducts);
+
+const getImage = (imagePath) => {
+  
+  
+  if (imagePath.includes('[') || imagePath.includes(']')){
+    return DefaultImage;
+  } else {
+    return imagePath;
+  }
+}
+
 </script>
 
 <style scoped>
