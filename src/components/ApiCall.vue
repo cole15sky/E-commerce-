@@ -2,7 +2,7 @@
   <div>
 
     <div
-     v-if="products.length" class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-4 gap-6 mt-10">
+     v-if="products.length" class="grid grid-cols-1 sm:grid-cols-5 lg:grid-cols-4 gap-8 mt-20">
       <div v-for="product in products" :key="product.id"
        class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <a href="#">
