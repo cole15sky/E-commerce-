@@ -13,7 +13,6 @@
 </template>
 
 <script setup>
-import ApiCall from './ApiCall.vue';
 </script>
 
 <style scoped>

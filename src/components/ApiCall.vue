@@ -83,5 +83,6 @@ const filteredProducts = computed(() => {
 
 </script>
 
-<style scoped>
-</style>
+<sls
+tyle scoped>
+</sls>
