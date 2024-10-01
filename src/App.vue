@@ -1,18 +1,14 @@
-
 <template>
   <div>
     <Navbar />
     <main class="container mx-auto">
-      <Product />
-      <CartUi />
+      <router-view></router-view> <!-- This will render the component based on the route -->
     </main>
   </div>
 </template>
 
 <script setup>
-import CartUi from './components/CartUi.vue';
-import Navbar from './components/Navbar.vue';
-import Product from './components/Product.vue';
+import Navbar from './components/Navbar.vue'; // Navbar stays at the top
 </script>
 
 <style scoped>
