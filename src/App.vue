@@ -3,7 +3,7 @@
   <div>
     <Navbar />
     <main class="container mx-auto">
-      <ApiCall />
+      <Product />
       <CartUi />
     </main>
   </div>
@@ -12,7 +12,7 @@
 <script setup>
 import CartUi from './components/CartUi.vue';
 import Navbar from './components/Navbar.vue';
-import ApiCall from './components/ApiCall.vue';
+import Product from './components/Product.vue';
 </script>
 
 <style scoped>
