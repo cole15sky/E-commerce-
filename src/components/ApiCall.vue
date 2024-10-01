@@ -83,6 +83,3 @@ const filteredProducts = computed(() => {
 
 </script>
 
-<sls
-tyle scoped>
-</sls>
