@@ -1,8 +1,11 @@
+
 <template>
   <div>
-    <Navbar/>
-    <ApiCall/>
-    <CartUi />
+    <Navbar />
+    <main class="container mx-auto">
+      <ApiCall />
+      <CartUi />
+    </main>
   </div>
 </template>
 
@@ -13,4 +16,7 @@ import ApiCall from './components/ApiCall.vue';
 </script>
 
 <style scoped>
+.container {
+  max-width: 1400px;
+}
 </style>
