@@ -1,7 +1,7 @@
 <template>
   <div>
     <svg
-      @click="getData"
+      @click="goToCart"  
       class="absolute top-4 right-9"  
       style="height:35px; width: 50px; cursor: pointer; fill: white;"
       xmlns="http://www.w3.org/2000/svg"
@@ -10,3 +10,14 @@
     </svg>
   </div>
 </template>
+
+<script setup>
+import { useRouter } from 'vue-router';
+
+const router = useRouter();  
+
+// navigate to the cart page when SVG is clicked
+const goToCart = () => {
+  router.push('/cart');  
+};
+</script>
