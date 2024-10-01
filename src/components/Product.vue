@@ -36,7 +36,11 @@
           </div>
           <div class="flex items-center justify-between">
             <span class="text-3xl font-bold text-gray-900 dark:text-white">${{ product.price }}</span>
-            <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            <a 
+              href="#" 
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              @click.prevent="addToCart(product)"
+            >
               Add to cart
             </a>
           </div>
@@ -52,7 +56,9 @@
 <script setup>
 import DefaultImage from '../../../E-Commerce/src/assets/Hoodie.jpg';
 import { ref, onMounted, computed } from 'vue';
+import { useCartStore } from '@/stores/CartStore';
 
+const cartStore = useCartStore();  // Importing the cart store
 const products = ref([]);
 
 const fetchProducts = async () => {
@@ -81,5 +87,9 @@ const filteredProducts = computed(() => {
   return products.value.filter(product => !getImage(product.images[0]).includes(DefaultImage));
 });
 
+// Function to add product to cart
+const addToCart = (product) => {
+  cartStore.addToCart(product);  // Add the product to the cart using Pinia store
+  console.log('Product added to cart:', product);
+};
 </script>
-
